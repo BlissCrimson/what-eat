@@ -1,0 +1,19 @@
+{
+  "name": "What we want to eat?",
+  "short_name": "What's eat",
+  "description": "Eine App für essenvorschläge",
+  "icons": [
+    {
+      "src": "/public/assets/icons/android/play_store_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#FCF9F8",
+  "background_color": "#FCF9F8",
+  "lang": "de-DE"
+}
