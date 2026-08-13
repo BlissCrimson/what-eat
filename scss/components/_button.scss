@@ -1,0 +1,62 @@
+@use "../abstract/variables" as vars;
+
+.btn {
+  padding: vars.$spacing-base vars.$spacing-md;
+  border: none;
+  border-radius: vars.$radius-lg;
+
+  &--primary {
+    background-color: vars.$color-primary;
+    color: vars.$color-on-primary;
+    box-shadow: vars.$shadow-ambient;
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+    &:hover {
+      box-shadow: vars.$shadow-ambient-hover;
+      transform: scale(1.01);
+    }
+
+    &:active {
+      transform: scale(1.02);
+    }
+  }
+}
+
+.button {
+  border: none;
+  border-radius: vars.$radius-lg;
+  background-color: vars.$color-primary;
+  color: vars.$color-on-primary;
+  box-shadow: vars.$shadow-ambient;
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: vars.$shadow-ambient-hover;
+    transform: scale(1.01);
+  }
+
+  &__dishes {
+    width: 90%;
+    height: 6rem;
+  }
+}
+
+.menu__button {
+  border: none;
+  border-radius: vars.$radius-lg;
+  background-color: vars.$color-secondary-container;
+  color: vars.$color-on-surface;
+  padding: vars.$spacing-base vars.$spacing-md;
+}
+
+.input {
+  font-family: vars.$font-family-base;
+  padding: vars.$spacing-base vars.$spacing-sm;
+  border: 1px solid vars.$color-outline-variant;
+  border-radius: vars.$radius-lg;
+
+  &:focus {
+    outline: none;
+    border-color: vars.$color-primary;
+  }
+}

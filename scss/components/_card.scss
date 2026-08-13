@@ -1,0 +1,54 @@
+@use "../abstract/mixin";
+@use "../abstract/functions" as fct;
+@use "../abstract/variables" as vars;
+
+.card {
+  background-color: vars.$color-surface-container-lowest;
+  border-radius: vars.$radius-xl;
+  box-shadow: vars.$shadow-ambient;
+  padding: vars.$spacing-md;
+
+  @include mixin.respond(sm) {
+    font-size: fct.px-to-rem(10);
+  }
+
+  @include mixin.flex-center();
+  @include mixin.fade-in(0.256s);
+
+  &__title {
+    color: vars.$color-primary;
+  }
+
+  &__text {
+    color: vars.$color-on-surface;
+
+    &--highlight {
+      color: vars.$color-secondary;
+    }
+
+    &:hover {
+      color: vars.$color-on-surface-variant;
+    }
+  }
+}
+
+.display {
+  @include mixin.flex-center();
+  padding: vars.$spacing-md;
+}
+
+.dish-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: vars.$spacing-xs;
+
+  &__item {
+    background-color: vars.$color-surface-container-low;
+    border-radius: vars.$radius-lg;
+    padding: vars.$spacing-base vars.$spacing-sm;
+    color: vars.$color-on-surface;
+  }
+}

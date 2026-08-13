@@ -1,0 +1,13 @@
+## 2026-08-12
+
+Feature: eigene Essens-Vorschläge eintippen + zufällig auswählen
+
+- src/types/ts/localStorage.ts: neu geschrieben (alte Copy-Paste-Reste aus anderem Projekt entfernt). saveDishes()/loadDishes() über localStorage-Key "what-eat:dishes".
+- src/types/ts/dishesDB.ts: neu geschrieben. getDishes(), addDish(name) (trim, keine Duplikate, Persistenz), getRandomDish().
+- src/ui.ts: neu angelegt. Hookt sich in bestehendes Markup aus index.html (data-view/data-action/data-el Attribute), steuert View-Umschaltung Vorschlag <-> Liste, Rendering der Liste, Formular-Handling.
+- src/main.ts: ruft initUi() aus ui.ts auf.
+- index.html: bestehende Struktur (header, display__dishes-Section, button__dishes, footer mit menu__button) um data-Attribute ergänzt und neue Section für Listen-Ansicht (Eingabefeld + <ul>) hinzugefügt, initial hidden.
+- scss/abstract/_variables.scss: neu angelegt, Design-Tokens aus docs/design.md (Farben, Spacing, Radius, Schatten, Font).
+- scss/components/_button.scss, _card.scss, scss/base/_typography.scss: Platzhalterfarben (blau/rot/dunkelgrau) durch Design-System-Tokens ersetzt, neue Styles für .button, .menu__button, .input, .display, .dish-list ergänzt.
+
+Verifiziert: `tsc -noEmit` und `vite build` laufen fehlerfrei durch; App wurde per `vite` Dev-Server über curl auf Markup/Struktur geprüft. Kein echter Browser-Test der Interaktion (Klicks) durchgeführt, da kein Browser-Tool verfügbar war.
