@@ -1,4 +1,5 @@
 import "/scss/main.scss"
-import { initUi } from "./ui";
+import { initSuggestionPage, initListPage } from "./ui";
 
-initUi();
+initSuggestionPage();
+initListPage();

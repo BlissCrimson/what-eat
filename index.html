@@ -12,7 +12,7 @@
         <h1>what eat?</h1>
     </header>
 
-    <section class="display display__dishes" data-view="suggestion">
+    <section class="display display__dishes">
         <p aria-placeholder="Klicke auf den Button für einen Vorschlag" data-el="suggestion-result">
             Klicke auf den Button für einen Vorschlag
         </p>
@@ -21,22 +21,14 @@
         <h2>Was sollst geben?</h2>
     </button>
 
-    <section class="display display__list" data-view="list" hidden>
-        <form data-el="add-form">
-            <input class="input" type="text" placeholder="Gericht eingeben" data-el="dish-input" />
-            <button class="button" type="submit">Hinzufügen</button>
-        </form>
-        <ul class="dish-list" data-el="dish-list"></ul>
-    </section>
-
     <footer>
         <div>
             <span>&copy; 2025 Matthias Tausch</span>
-            <a href="impressum.html"></a>
+            <a href="pages/impresssum.html"></a>
         </div>
-        <button class="menu__button" data-action="toggle-view">
+        <a class="menu__button" href="pages/dishes.html">
             Meine Liste
-        </button>
+        </a>
     </footer>
 
     <script type="module" src="/src/main.ts"></script>

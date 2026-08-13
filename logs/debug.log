@@ -11,3 +11,16 @@ Feature: eigene Essens-Vorschläge eintippen + zufällig auswählen
 - scss/components/_button.scss, _card.scss, scss/base/_typography.scss: Platzhalterfarben (blau/rot/dunkelgrau) durch Design-System-Tokens ersetzt, neue Styles für .button, .menu__button, .input, .display, .dish-list ergänzt.
 
 Verifiziert: `tsc -noEmit` und `vite build` laufen fehlerfrei durch; App wurde per `vite` Dev-Server über curl auf Markup/Struktur geprüft. Kein echter Browser-Test der Interaktion (Klicks) durchgeführt, da kein Browser-Tool verfügbar war.
+
+## 2026-08-13
+
+Feature: Startseite (nur Anzeige + Button) von der Liste-/Hinzufügen-Seite (pages/dishes.html) trennen
+
+- public/pages/dishes.html, public/pages/impresssum.html: nach pages/dishes.html bzw. pages/impresssum.html verschoben, da Dateien unter public/ von Vite unverändert kopiert werden (kein HTML-Processing, Asset-Pfade wären im Production-Build kaputt gewesen).
+- vite.config.ts: build.rollupOptions.input um alle drei HTML-Einstiegspunkte (index.html, pages/dishes.html, pages/impresssum.html) ergänzt, damit Vite sie als echte Entries baut.
+- index.html: Formular- und Listen-Section sowie den View-Toggle-Button entfernt, sodass nur noch Anzeige + Vorschlag-Button übrig bleiben. Footer-"Meine Liste"-Button durch echten Link (<a>) zu pages/dishes.html ersetzt; Impressum-Link auf den tatsächlichen (falsch geschriebenen) Dateinamen pages/impresssum.html korrigiert.
+- pages/dishes.html: Formular (add-form/dish-input) und Liste (dish-list) aus index.html hierher verschoben, plus Header und Rücklink zur Startseite.
+- src/ui.ts: initUi() aufgeteilt in initSuggestionPage() (Vorschlag-Button) und initListPage() (Formular + Liste), jede prüft nur noch die für ihre Seite relevanten Elemente und bricht unabhängig ab, statt beim Fehlen irgendeines Elements komplett zu no-open. View-Toggle-State (currentView) entfernt, da nicht mehr gebraucht.
+- src/main.ts: ruft initSuggestionPage() und initListPage() auf statt initUi().
+
+Verifiziert: `pnpm build` (tsc -noEmit + vite build) läuft fehlerfrei durch, alle drei dist/*.html-Dateien bekommen korrekt gehashte Asset-Pfade statt des rohen /src/main.ts-Pfads. Zusätzlich per `vite` Dev-Server (mit base /what-eat/) über curl geprüft: index.html, pages/dishes.html, pages/impresssum.html liefern korrektes Markup inkl. relativer Links (pages/dishes.html, pages/impresssum.html, ../). Kein echter Browser-Klick-Test durchgeführt, da kein Browser-Tool verfügbar war.

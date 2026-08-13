@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>what-eat</title>
-  <script type="module" crossorigin src="/assets/index-RNRSWOLC.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-BZvJYOY9.css">
+  <script type="module" crossorigin src="/what-eat/assets/main-CnmUeZCI.js"></script>
+  <link rel="stylesheet" crossorigin href="/what-eat/assets/main-BZvJYOY9.css">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
         <h1>what eat?</h1>
     </header>
 
-    <section class="display display__dishes" data-view="suggestion">
+    <section class="display display__dishes">
         <p aria-placeholder="Klicke auf den Button für einen Vorschlag" data-el="suggestion-result">
             Klicke auf den Button für einen Vorschlag
         </p>
@@ -23,22 +23,14 @@
         <h2>Was sollst geben?</h2>
     </button>
 
-    <section class="display display__list" data-view="list" hidden>
-        <form data-el="add-form">
-            <input class="input" type="text" placeholder="Gericht eingeben" data-el="dish-input" />
-            <button class="button" type="submit">Hinzufügen</button>
-        </form>
-        <ul class="dish-list" data-el="dish-list"></ul>
-    </section>
-
     <footer>
         <div>
             <span>&copy; 2025 Matthias Tausch</span>
-            <a href="impressum.html"></a>
+            <a href="pages/impresssum.html"></a>
         </div>
-        <button class="menu__button" data-action="toggle-view">
+        <a class="menu__button" href="pages/dishes.html">
             Meine Liste
-        </button>
+        </a>
     </footer>
 
 </body>
