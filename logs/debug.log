@@ -24,3 +24,12 @@ Feature: Startseite (nur Anzeige + Button) von der Liste-/Hinzufügen-Seite (pag
 - src/main.ts: ruft initSuggestionPage() und initListPage() auf statt initUi().
 
 Verifiziert: `pnpm build` (tsc -noEmit + vite build) läuft fehlerfrei durch, alle drei dist/*.html-Dateien bekommen korrekt gehashte Asset-Pfade statt des rohen /src/main.ts-Pfads. Zusätzlich per `vite` Dev-Server (mit base /what-eat/) über curl geprüft: index.html, pages/dishes.html, pages/impresssum.html liefern korrektes Markup inkl. relativer Links (pages/dishes.html, pages/impresssum.html, ../). Kein echter Browser-Klick-Test durchgeführt, da kein Browser-Tool verfügbar war.
+
+## 2026-08-13 (2)
+
+Feature: Netlify-Deployment vorbereiten (App läuft dort eigenständig unter Root-Domain, nicht unter einem Unterpfad)
+
+- vite.config.ts: base von "/what-eat/" auf "/" geändert, da die App bei Netlify unter der Root-Domain (z.B. what-eat.netlify.app) laufen soll und nicht unter einem GitHub-Pages-typischen Unterordner.
+- Keine netlify.toml angelegt (auf Rückfrage: Nutzer konfiguriert Build-Settings direkt im Netlify-Dashboard). Dafür nötig: Build command `pnpm build`, Publish directory `dist`.
+
+Verifiziert: `pnpm build` läuft fehlerfrei durch, dist/index.html, dist/pages/dishes.html, dist/pages/impresssum.html werden mit korrekt gehashten Asset-Pfaden erzeugt.

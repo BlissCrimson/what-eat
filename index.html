@@ -22,20 +22,19 @@
     <button class="button button__dishes" data-action="suggest">
         <h2>Was sollst geben?</h2>
     </button>
-
+    <a class="button__dishes--list" href="pages/dishes.html">
+        Meine Liste
+    </a>
     <footer>
         <div>
             <span>&copy; 2025 Matthias Tausch</span>
             <a href="pages/impresssum.html"></a>
         </div>
-        <a class="menu__button" href="pages/dishes.html">
-            Meine Liste
-        </a>
     </footer>
 
     <script type="module" src="/src/main.ts"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
+    <script type="module">
+        if (import.meta.env.PROD && 'serviceWorker' in navigator) {
             navigator.serviceWorker.register('/sw.js')
                 .then(reg => console.log('Service Worker registriert:', reg.scope))
                 .catch(err => console.error('SW-Registrierung fehlgeschlagen:', err));
