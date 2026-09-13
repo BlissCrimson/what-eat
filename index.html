@@ -1,46 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>what-eat</title>
-    <link rel="shortcut icon" href="/public/assets/icons/web/favicon.ico" type="image/x-icon">
-    <link rel="manifest" href="manifest.json">
+    <title>What eat?</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-    <header>
-        <h1>what eat?</h1>
-    </header>
-
-    <section class="display display__dishes">
-        <p class="display--text" aria-placeholder="Klicke auf den Button für einen Vorschlag" data-el="suggestion-result">
-            Klicke auf den Button für einen Vorschlag
-        </p>
-        <button class="button button__dishes" data-action="suggest">
-            <h2>Was sollst geben?</h2>
-        </button>
-    </section>
-
-    <a class="button__dishes--list" href="pages/dishes.html">
-        Meine Liste
-    </a>
-    <footer>
-        <div>
-            <span>&copy; 2025 Matthias Tausch</span>
-            <a href="pages/impresssum.html"></a>
+    <header class="header">
+        <h1>WHAT EAT?</h1>
+        <nav class="nav__menu">
+            <button>
+                <img src="" alt="menu"></button>
+        </nav>
+        <div class=" d_none">
+            <a href="/pages/dishes.html">Gerichte</a>
+            <a href="/pages/imprint.html">Impressum</a>
         </div>
+    </header>
+    <main class="main main__index">
+        <section>
+            <div class="dish__area">
+                <p>Test Meal</p>
+            </div>
+        </section>
+        <section>
+            <button class="button button__dish">WHAT EAT?</button>
+        </section>
+    </main>
+    <footer class="footer">
+        copyright by Matthias Tausch
+        <a href="/pages/imprint.html">Impressum</a>
     </footer>
-
-    <script type="module" src="/src/main.ts"></script>
-    <script type="module">
-        if (import.meta.env.PROD && 'serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js')
-                .then(reg => console.log('Service Worker registriert:', reg.scope))
-                .catch(err => console.error('SW-Registrierung fehlgeschlagen:', err));
-        }
-    </script>
 </body>
 
 </html>
