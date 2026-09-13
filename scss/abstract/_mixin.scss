@@ -2,7 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@mixin flex-column-center {
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 @mixin fade-in($time: 0.3, $ease: ease-in-out) {

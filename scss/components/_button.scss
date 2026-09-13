@@ -1,26 +1,29 @@
 @use "../abstract/variables" as vars;
+@use "../abstract/mixin" as mx;
 
-.btn {
-  padding: vars.$spacing-base vars.$spacing-md;
-  border: none;
-  border-radius: vars.$radius-lg;
+// .btn {
+//   padding: vars.$spacing-base vars.$spacing-md;
+//   border: none;
+//   border-radius: vars.$radius-lg;
 
-  &--primary {
-    background-color: vars.$color-primary;
-    color: vars.$color-on-primary;
-    box-shadow: vars.$shadow-ambient;
-    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+//   &--primary {
+//     background-color: vars.$color-primary;
+//     color: vars.$color-on-primary;
+//     box-shadow: vars.$shadow-ambient;
+//     transition:
+//       box-shadow 0.2s ease-in-out,
+//       transform 0.2s ease-in-out;
 
-    &:hover {
-      box-shadow: vars.$shadow-ambient-hover;
-      transform: scale(1.01);
-    }
+//     &:hover {
+//       box-shadow: vars.$shadow-ambient-hover;
+//       transform: scale(1.01);
+//     }
 
-    &:active {
-      transform: scale(1.02);
-    }
-  }
-}
+//     &:active {
+//       transform: scale(1.02);
+//     }
+//   }
+// }
 
 .button {
   border: none;
@@ -28,7 +31,9 @@
   background-color: vars.$color-primary;
   color: vars.$color-on-primary;
   box-shadow: vars.$shadow-ambient;
-  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+  transition:
+    box-shadow 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
 
   &:hover {
     box-shadow: vars.$shadow-ambient-hover;

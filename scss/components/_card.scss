@@ -12,7 +12,7 @@
     font-size: fct.px-to-rem(10);
   }
 
-  @include mixin.flex-center();
+  @include mixin.flex-column-center();
   @include mixin.fade-in(0.256s);
 
   &__title {
@@ -21,6 +21,8 @@
 
   &__text {
     color: vars.$color-on-surface;
+    text-align: center;
+    max-width: #{fct.px-to-rem(10)};
 
     &--highlight {
       color: vars.$color-secondary;
@@ -33,7 +35,7 @@
 }
 
 .display {
-  @include mixin.flex-center();
+  @include mixin.flex-column-center();
   padding: vars.$spacing-md;
 }
 
