@@ -33,3 +33,12 @@ Feature: Netlify-Deployment vorbereiten (App läuft dort eigenständig unter Roo
 - Keine netlify.toml angelegt (auf Rückfrage: Nutzer konfiguriert Build-Settings direkt im Netlify-Dashboard). Dafür nötig: Build command `pnpm build`, Publish directory `dist`.
 
 Verifiziert: `pnpm build` läuft fehlerfrei durch, dist/index.html, dist/pages/dishes.html, dist/pages/impresssum.html werden mit korrekt gehashten Asset-Pfaden erzeugt.
+
+## 2026-09-13
+
+Fix: .gitignore an Projekt (Vite/TypeScript/pnpm) angepasst
+
+- .gitignore: node_modules-Eintrag beibehalten (ohne führenden Slash), zusätzlich dist/dist-ssr (Vite-Build-Output), .env-Dateien, Log-Dateien, Editor- (.vscode/.idea) und OS-Artefakte (.DS_Store) ergänzt.
+- node_modules war trotz vorheriger .gitignore-Regel bereits im Git-Index getrackt (viele tsc/rolldown-Binärdateien tauchten als "modified" in git status auf). Mit `git rm -r --cached node_modules` aus dem Index entfernt (lokale Dateien bleiben erhalten), damit die .gitignore-Regel greift.
+
+Verifiziert: `git status` zeigt node_modules-Inhalte nur noch als "deleted" (Index) an, kein neuer node_modules-Eintrag als "untracked" nach dem geplanten Commit erwartet.
