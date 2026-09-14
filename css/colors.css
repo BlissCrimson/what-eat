@@ -1,4 +1,13 @@
-:root{
-
-    
+:root {
+    --text-link: #000000;
+    --text__button--dish: #f5f5f5;
+    --bg__button: #45c72b;
+    --bg__button--hover: #57ec3a;
+    --bg__dialog--dishes: #fcfbec;
+    --bg__menu: #000000;
+    --bg__link--hover: #faf7ce;
+    --bg__dish--area: #f8f8c8;
+    --bg__footer: #ecffe7;
+    --shadow__button--hover: #969595;
+    --border__dialog: #969595;
 }
