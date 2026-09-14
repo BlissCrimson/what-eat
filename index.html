@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="/css/style.css">
     <script src="/js/ui.js"></script>
     <script src="/js/db-dishes.js"></script>
+    <script src="/js/localStorage.js"></script>
     <script src="/js/main.js" defer></script>
 </head>
 
-<body>
+<body onload="initIndex()">
     <header class="header">
         <a href="/index.html">
             <h1>WHAT EAT?</h1>
@@ -26,6 +27,7 @@
                 <span class="menu__bar"></span>
             </label>
             <div class="nav__links">
+                <a href="/index.html">Home</a>
                 <a href="/pages/dishes.html">Gerichte</a>
                 <a href="/pages/imprint.html">Impressum</a>
                 <a href="/pages/privacyPolicy.html">Datenschutzerklärung</a>

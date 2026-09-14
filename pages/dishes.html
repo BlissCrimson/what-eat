@@ -7,9 +7,13 @@
     <title>What eat?</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/ui.js"></script>
+    <script src="/js/db-dishes.js"></script>
+    <script src="/js/localStorage.js"></script>
+    <script src="/js/main.js" defer></script>
 </head>
 
-<body>
+<body onload="initDishes()">
     <header class="header">
         <a href="/index.html">
             <h1>WHAT EAT?</h1>
@@ -23,6 +27,7 @@
                 <span class="menu__bar"></span>
             </label>
             <div class="nav__links">
+                <a href="/index.html">Home</a>
                 <a href="/pages/dishes.html">Gerichte</a>
                 <a href="/pages/imprint.html">Impressum</a>
                 <a href="/pages/privacyPolicy.html">Datenschutzerklärung</a>
@@ -30,18 +35,25 @@
         </nav>
     </header>
     <main class="main main__dishes">
-        <section class="dishes__list" id="meals">
-            <div>
-                <ul>
-                    <li>Spaghetti Bolognese</li>
-                    <li>Tiefkühl Pizza</li>
-                    <li>dish3</li>
-                    <li>dish4</li>
-                    <li>dish5</li>
-                    <li>dish5</li>
-                </ul>
-            </div>
+        <section class="dishes__list">
+            <ul id="meals">
+                <li>Spaghetti Bolognese</li>
+                <li>Tiefkühl Pizza</li>
+                <li>dish3</li>
+                <li>dish4</li>
+                <li>dish5</li>
+                <li>dish5</li>
+            </ul>
         </section>
+        <button class="button button__dish button__dish--add" onclick="openDialog()">Gericht
+            <img class="icon__dish--add" src="./asetts/icons/icon__plus.svg" alt="+">
+        </button>
+        <dialog class="dialog__dishes" id="addDishDialog" onclick="if (event.target === this) closeDialog()">
+            <img class="dialog__dishes--icon" src="./asetts/icons/icon__plus.svg" alt="X" onclick="closeDialog()">
+            <label for="dishInput">Gericht</label>
+            <input class="dialog__dishes--input" type="text" id="dishInput" placeholder="   z.B. Tortelini">
+            <button class="button button__dish button__dish--add" onclick="addDisch()">Hinzufügen</button>
+        </dialog>
     </main>
     <footer class="footer">
         copyright by Matthias Tausch
