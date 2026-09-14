@@ -2,7 +2,7 @@ const CACHE_NAME = 'what-eat-v1';
 const URLS_TO_CACHE = [
     '/',
     '/index.html',
-    '/icons/icon-192x192.png'
+    '/pages/asetts/icons/web/icon-192.png'
 ];
 
 self.addEventListener('install', event => {
