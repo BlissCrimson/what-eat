@@ -7,7 +7,9 @@
     <title>What eat?</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/main.js"></script>
+    <script src="/js/ui.js"></script>
+    <script src="/js/db-dishes.js"></script>
+    <script src="/js/main.js" defer></script>
 </head>
 
 <body>
@@ -32,12 +34,12 @@
     </header>
     <main class="main main__index">
         <section>
-            <div class="dish__area" id="dish">
+            <div class="dish__area" id="dishDisplay">
                 <p>Klick "WHAT EAT?"</p>
             </div>
         </section>
         <section>
-            <button class="button button__dish" onclick="">WHAT EAT?</button>
+            <button class="button button__dish" onclick="generateDish()">WHAT EAT?</button>
         </section>
     </main>
     <footer class="footer">
