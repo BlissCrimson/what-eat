@@ -1,0 +1,19 @@
+{
+  "name": "What eat?",
+  "short_name": "What eat?",
+  "description": "Ein Generattor für Essens vorschläge",
+  "icons": [
+    {
+      "src": "/pages/asetts/icons/android/play_store_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#fcfbec",
+  "background_color": "#fcfbec",
+  "lang": "de-DE"
+}

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/colors.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="shortcut icon" href="/pages/asetts/icons/web/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
     <script src="/js/ui.js"></script>
     <script src="/js/db-dishes.js"></script>
     <script src="/js/localStorage.js"></script>
@@ -53,6 +54,15 @@
             <a href="/pages/privacyPolicy.html">Datenschutzerklärung</a>
         </div>
     </footer>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(reg => console.log('Service Worker registriert:', reg.scope))
+                .catch(err => console.error('SW-Registrierung fehlgeschlagen:', err));
+        }
+
+    </script>
 </body>
 
 </html>
