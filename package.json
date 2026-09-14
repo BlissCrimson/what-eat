@@ -1,23 +1,25 @@
 {
-  "name": "Memory",
-  "version": "1.0.0",
-  "description": "",
+  "name": "what-eat",
+  "version": "0.9.0",
+  "description": "App that suggests what to eat from your own list of dishes",
   "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -noEmit && vite build",
-    "preview": "vite preview"
+    "dev": "npx http-server -c-1",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "engines": {
-    "pnpm": ">=11.0.8"
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.0.8",
+      "onFail": "download"
+    }
   },
-  "type": "module",
   "devDependencies": {
-    "sass": "^1.102.0",
-    "typescript": "^7.0.2",
-    "vite": "^8.2.1"
-  }
+    "eslint": "^10.10.0",
+    "prettier": "^3.9.6"
+  },
+  "packageManager": "pnpm@11.0.8+sha512.4c4097e1dd2d42372c4e7fa5a791ff28fc75a484c7ac192e64b1df0fdef17594ba982f9b4fed9adfb3c757846f565b799b2763fb3733d1de1bcb82cf46684912"
 }

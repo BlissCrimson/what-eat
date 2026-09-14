@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -7,13 +7,9 @@
     <title>What eat?</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/ui.js"></script>
-    <script src="/js/db-dishes.js"></script>
-    <script src="/js/localStorage.js"></script>
-    <script src="/js/main.js" defer></script>
 </head>
 
-<body onload="initDishes()">
+<body>
     <header class="header">
         <a href="/index.html">
             <h1>WHAT EAT?</h1>
@@ -34,26 +30,30 @@
             </div>
         </nav>
     </header>
-    <main class="main main__dishes">
-        <section class="dishes__list">
-            <ul id="meals">
-                <li>Spaghetti Bolognese</li>
-                <li>Tiefkühl Pizza</li>
-                <li>dish3</li>
-                <li>dish4</li>
-                <li>dish5</li>
-                <li>dish5</li>
-            </ul>
-        </section>
-        <button class="button button__dish button__dish--add" onclick="openDialog()">Gericht
-            <img class="icon__dish--add" src="./asetts/icons/icon__plus.svg" alt="+">
-        </button>
-        <dialog class="dialog__dishes" id="addDishDialog" onclick="if (event.target === this) closeDialog()">
-            <img class="dialog__dishes--icon" src="./asetts/icons/icon__plus.svg" alt="X" onclick="closeDialog()">
-            <label for="dishInput">Gericht</label>
-            <input class="dialog__dishes--input" type="text" id="dishInput" placeholder="   z.B. Tortelini">
-            <button class="button button__dish button__dish--add" onclick="addDisch()">Hinzufügen</button>
-        </dialog>
+
+    <main class="main main__imprint" id='generator_results'>
+
+        <h2>Impressum</h2>
+        <h3>Verantwortliche(r)</h3>
+        <p class="">Janus Nova</p>
+        <h4>Postanschrift</h4>
+        <p class="">Eikammsweg 10<br />
+            25821 Breklum</p>
+        <h4>Kontakt</h4>
+        <p>E-Mail: matthias.tausch@janusnova.de</p>
+        <p>Telefon: +49 170 3828724</p>
+        <h4>Vertreten durch</h4>
+        <p class="">Matthias Tausch<br />
+            Geschäftsführer</p>
+        <h3>Hinweise zur Website</h3>
+        <h4>Urheberrechtliche Hinweise</h4>
+        <p class="">[Bitte Informationen ergänzen]</p>
+        <h4>Verantwortlich für journalistisch-redaktionelle Inhalte</h4>
+        <p class="">[Bitte Informationen ergänzen]</p>
+        <p><em>Dieses Impressum wurde mit Hilfe des <a href="https://www.activemind.de/generatoren/impressum/"
+                    target="_blank" rel="noopener">Impressums-Generators der activeMind AG</a> erstellt (Version
+                2024-07-21).</em></p>
+
     </main>
     <footer class="footer">
         copyright by Matthias Tausch
