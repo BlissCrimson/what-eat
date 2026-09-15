@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">What eat?</string>
+    <string name="title_activity_main">What eat?</string>
+    <string name="package_name">de.janusnova.whateat</string>
+    <string name="custom_url_scheme">de.janusnova.whateat</string>
+</resources>
