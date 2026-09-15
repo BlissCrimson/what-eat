@@ -4,7 +4,7 @@
   "description": "App that suggests what to eat from your own list of dishes",
   "main": "index.js",
   "scripts": {
-    "dev": "npx http-server -c-1",
+    "dev": "pnpm dlx http-server www -c-1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -25,6 +25,7 @@
   "packageManager": "pnpm@11.0.8+sha512.4c4097e1dd2d42372c4e7fa5a791ff28fc75a484c7ac192e64b1df0fdef17594ba982f9b4fed9adfb3c757846f565b799b2763fb3733d1de1bcb82cf46684912",
   "dependencies": {
     "@capacitor/android": "^8.5.2",
-    "@capacitor/core": "^8.5.2"
+    "@capacitor/core": "^8.5.2",
+    "@capacitor/preferences": "^8.0.1"
   }
 }

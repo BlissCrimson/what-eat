@@ -1,20 +1,17 @@
+import { dishes } from './db-dishes.js';
+
 const DISHES_STORAGE_KEY = 'dishes';
 
-function loadDishes() {
+export async function loadDishes() {
     const stored = localStorage.getItem(DISHES_STORAGE_KEY);
     if (stored) {
-        dishes = JSON.parse(stored);
+        dishes.length = 0;
+        dishes.push(...JSON.parse(stored));
     } else {
         saveDishes();
     }
 }
 
-function saveDishes() {
+export async function saveDishes() {
     localStorage.setItem(DISHES_STORAGE_KEY, JSON.stringify(dishes));
-}
-
-function deleteDish(index) {
-    dishes.splice(index, 1);
-    saveDishes();
-    showDishList();
 }

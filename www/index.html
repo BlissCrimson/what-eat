@@ -11,13 +11,10 @@
     <link rel="icon" href="/pages/asetts/icons/web/favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href="/pages/asetts/icons/web/apple-touch-icon.png">
     <link rel="manifest" href="manifest.json">
-    <script src="/js/ui.js"></script>
-    <script src="/js/db-dishes.js"></script>
-    <script src="/js/localStorage.js"></script>
-    <script src="/js/main.js" defer></script>
+    <script type="module" src="/js/main.js"></script>
 </head>
 
-<body onload="initIndex()">
+<body>
     <header class="header">
         <a href="/index.html">
             <h1>WHAT EAT?</h1>
@@ -45,7 +42,7 @@
             </div>
         </section>
         <section>
-            <button class="button button__dish" onclick="generateDish()">WHAT EAT?</button>
+            <button class="button button__dish" id="generateDishBtn">WHAT EAT?</button>
         </section>
     </main>
     <footer class="footer">

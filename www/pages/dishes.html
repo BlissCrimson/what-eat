@@ -8,13 +8,10 @@
     <link rel="stylesheet" href="/css/colors.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="shortcut icon" href="/pages/asetts/icons/web/favicon.ico" type="image/x-icon">
-    <script src="/js/ui.js"></script>
-    <script src="/js/db-dishes.js"></script>
-    <script src="/js/localStorage.js"></script>
-    <script src="/js/main.js" defer></script>
+    <script type="module" src="/js/main.js"></script>
 </head>
 
-<body onload="initDishes()">
+<body>
     <header class="header">
         <a href="/index.html">
             <h1>WHAT EAT?</h1>
@@ -46,14 +43,14 @@
                 <li>dish5</li>
             </ul>
         </section>
-        <button class="button button__dish button__dish--add" onclick="openDialog()">Gericht
+        <button class="button button__dish button__dish--add" id="openDialogBtn">Gericht
             <img class="icon__dish--add" src="./asetts/icons/icon__plus.svg" alt="+">
         </button>
-        <dialog class="dialog__dishes" id="addDishDialog" onclick="if (event.target === this) closeDialog()">
-            <img class="dialog__dishes--icon" src="./asetts/icons/icon__plus.svg" alt="X" onclick="closeDialog()">
+        <dialog class="dialog__dishes" id="addDishDialog">
+            <img class="dialog__dishes--icon" id="closeDialogIcon" src="./asetts/icons/icon__plus.svg" alt="X">
             <label for="dishInput">Gericht</label>
             <input class="dialog__dishes--input" type="text" id="dishInput" placeholder="   z.B. Tortelini">
-            <button class="button button__dish button__dish--add" onclick="addDisch()">Hinzufügen</button>
+            <button class="button button__dish button__dish--add" id="addDishBtn">Hinzufügen</button>
         </dialog>
     </main>
     <footer class="footer">

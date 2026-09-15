@@ -1,4 +1,4 @@
-let dishes = [
+export let dishes = [
     { "name": "Spaghetti Bolognese" },
     { "name": "Tiefkühlpizza" },
     { "name": "Pizza Margherita" },
