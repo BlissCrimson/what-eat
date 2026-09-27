@@ -1,0 +1,34 @@
+.button:hover {
+    cursor: pointer;
+}
+
+.button__dish {
+    width: 200px;
+    height: 64px;
+    font-size: 32px;
+    color: var(--text__button--dish);
+    background-color: var(--bg__button);
+    border: none;
+    border-radius: 25px;
+}
+
+.button__dish:hover {
+    background-color: var(--bg__button--hover);
+    transition: ease-in-out;
+    box-shadow: var(--border__dialog);
+}
+
+.button__dipxsh--add {
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon__dish--add {
+    height: 24px;
+}
+
+.icon__trash {
+    height: 24px;
+}
