@@ -1,4 +1,4 @@
-const CACHE_NAME = 'what-eat-v1';
+const CACHE_NAME = 'what-eat-v2';
 const URLS_TO_CACHE = [
     '/',
     '/index.html',
@@ -9,6 +9,14 @@ self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then(cache => cache.addAll(URLS_TO_CACHE))
+    );
+});
+
+self.addEventListener('activate', event => {
+    event.waitUntil(
+        caches.keys().then(keys =>
+            Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)))
+        )
     );
 });
 

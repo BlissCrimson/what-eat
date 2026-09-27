@@ -25,36 +25,9 @@ body {
     display: none;
 }
 
-.button:hover {
-    cursor: pointer;
-}
-
-.button__dish {
-    width: 160px;
-    height: 64px;
-    font-size: 18px;
-    color: var(--text__button--dish);
-    background-color: var(--bg__button);
-    border: none;
-    border-radius: 25px;
-}
-
-.button__dish:hover {
-    background-color: var(--bg__button--hover);
-    transition: ease-in-out;
-    box-shadow: var(--border__dialog);
-}
-
-.button__dish--add {
-    height: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .dialog__dishes[open] {
     width: 300px;
-    height: 200px;
+    height: 300px;
     margin: auto;
     padding-top: 48px;
     border: 0.5px solid var(--border__dialog);
@@ -76,7 +49,7 @@ body {
 }
 
 .dialog__dishes--input {
-    height: 24px;
+    height: 48px;
     padding-left: 8px;
     border: 0.5px solid var(--shadow__button--hover);
     border-radius: 25px;
@@ -85,7 +58,6 @@ body {
 .dish__area {
     width: 300px;
     height: 120px;
-    font-size: 32px;
     border-radius: 25px;
     background-color: var(--bg__dish--area);
     display: flex;
@@ -93,11 +65,30 @@ body {
     align-items: center;
 }
 
+.dish__area p {
+    font-size: 32px;
+    text-align: center;
+}
+
+.dish__list {
+    width: 100%;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+}
+
 .dishes__list {
-    width: 200px;
+    width: 320px;
     padding: 8px 24px 8px 24px;
     background-color: var(--bg__dialog--dishes);
     border-radius: 25px;
+
+}
+
+.dialog__title {
+    font-size: 34px;
 }
 
 .footer {
@@ -126,13 +117,6 @@ body {
     position: relative;
 }
 
-.icon__dish--add {
-    height: 24px;
-}
-
-.icon__trash {
-    height: 12px;
-}
 
 .main {
     margin: 32px;

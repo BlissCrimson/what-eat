@@ -1,5 +1,6 @@
 import { dishes } from './db-dishes.js';
 import { loadDishes, saveDishes } from './localStorage.js';
+import { generateDishTemplate, generateDishArea } from './templates.js';
 
 async function initIndex() {
     await loadDishes();
@@ -14,9 +15,7 @@ function showDishList() {
     const dishListRef = document.getElementById('meals');
     dishListRef.innerHTML = "";
     dishes.forEach((dish, index) => {
-        dishListRef.innerHTML += `
-        <li>${dish.name}<img class="icon__trash" data-index="${index}" src="../pages/asetts/icons/icon__trash.png" alt="trash"></li>
-        `
+        dishListRef.innerHTML += generateDishTemplate(dish, index);
     });
 }
 
@@ -43,7 +42,7 @@ function generateDish() {
     const showDishRef = document.getElementById('dishDisplay');
     const randomDish = dishes[Math.floor(Math.random() * dishes.length)];
     showDishRef.innerHTML = "";
-    showDishRef.innerHTML = `<p>${randomDish.name}</p>`;
+    showDishRef.innerHTML = generateDishArea(randomDish);
 }
 
 async function deleteDish(index) {
