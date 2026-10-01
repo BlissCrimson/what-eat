@@ -11,13 +11,6 @@
   "author": "",
   "license": "ISC",
   "private": true,
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "11.0.8",
-      "onFail": "download"
-    }
-  },
   "devDependencies": {
     "@capacitor/cli": "^8.5.2",
     "@semantic-release/commit-analyzer": "^13.0.0",
