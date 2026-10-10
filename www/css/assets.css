@@ -29,6 +29,7 @@
     height: 24px;
 }
 
-.icon__trash {
+.icon__trash,
+.icon__rename {
     height: 24px;
 }
