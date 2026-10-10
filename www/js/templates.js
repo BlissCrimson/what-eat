@@ -1,9 +1,9 @@
 export function generateDishTemplate(dish, index) {
     return `
-        <li class="dish__list">
+        <div class="dish__list">
             ${dish.name}
             <img class="icon__trash" data-index="${index}" src="../pages/asetts/icons/icon__trash.png" alt="trash">
-        </li>
+        </div>
     `
 }
 

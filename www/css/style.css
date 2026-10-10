@@ -76,12 +76,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 4px 0;
+    margin: 4px;
+    padding: 4px 16px;
+    border: 2px solid rgba(25, 46, 25, 0.24);
+    border-radius: 25px;
 }
 
 .dishes__list {
     width: 320px;
-    padding: 8px 24px 8px 24px;
+    padding: 8px 16px;
     background-color: var(--bg__dialog--dishes);
     border-radius: 25px;
 
