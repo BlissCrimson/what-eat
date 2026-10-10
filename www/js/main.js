@@ -19,12 +19,14 @@ function showDishList() {
     });
 }
 
-function openDialog() {
-    document.getElementById('addDishDialog').showModal();
+let renameIndex = null;
+
+function openDialog(dialogId) {
+    document.getElementById(dialogId).showModal();
 }
 
-function closeDialog() {
-    document.getElementById('addDishDialog').close();
+function closeDialog(dialogId) {
+    document.getElementById(dialogId).close();
 }
 
 async function addDisch() {
@@ -35,7 +37,7 @@ async function addDisch() {
     saveDishes();
     showDishList();
     dishInputRef.value = '';
-    closeDialog();
+    closeDialog('addDishDialog');
 }
 
 function generateDish() {
@@ -43,6 +45,20 @@ function generateDish() {
     const randomDish = dishes[Math.floor(Math.random() * dishes.length)];
     showDishRef.innerHTML = "";
     showDishRef.innerHTML = generateDishArea(randomDish);
+}
+function renameDish(index) {
+    renameIndex = index;
+    document.getElementById('renameInput').value = dishes[index].name;
+    openDialog('renameDishDialog');
+}
+
+async function confirmRename() {
+    const name = document.getElementById('renameInput').value.trim();
+    if (name === '' || renameIndex === null) return;
+    dishes[renameIndex].name = name;
+    await saveDishes();
+    showDishList();
+    closeDialog('renameDishDialog');
 }
 
 async function deleteDish(index) {
@@ -64,14 +80,23 @@ document.addEventListener('DOMContentLoaded', () => {
             if (event.target.matches('.icon__trash')) {
                 deleteDish(Number(event.target.dataset.index));
             }
+            if (event.target.matches('.icon__rename')) {
+                renameDish(Number(event.target.dataset.index));
+            }
         });
         initDishes();
 
-        document.getElementById('openDialogBtn').addEventListener('click', openDialog);
-        document.getElementById('closeDialogIcon').addEventListener('click', closeDialog);
+        document.getElementById('openDialogBtn').addEventListener('click', () => openDialog('addDishDialog'));
+        document.getElementById('closeDialogIcon').addEventListener('click', () => closeDialog('addDishDialog'));
         document.getElementById('addDishBtn').addEventListener('click', addDisch);
         document.getElementById('addDishDialog').addEventListener('click', (event) => {
-            if (event.target === event.currentTarget) closeDialog();
+            if (event.target === event.currentTarget) closeDialog('addDishDialog');
+        });
+
+        document.getElementById('closeRenameDialogIcon').addEventListener('click', () => closeDialog('renameDishDialog'));
+        document.getElementById('renameDishBtn').addEventListener('click', confirmRename);
+        document.getElementById('renameDishDialog').addEventListener('click', (event) => {
+            if (event.target === event.currentTarget) closeDialog('renameDishDialog');
         });
     }
 });

@@ -55,6 +55,16 @@ body {
     border-radius: 25px;
 }
 
+.dialog__title {
+    font-size: 34px;
+    text-align: center;
+}
+
+.dialog__title--rename {
+    font-size: 24px;
+    text-align: center;
+}
+
 .dish__area {
     width: 300px;
     height: 120px;
@@ -82,16 +92,17 @@ body {
     border-radius: 25px;
 }
 
+.dish__list--icons {
+    display: flex;
+    gap: 8px;
+}
+
 .dishes__list {
     width: 320px;
     padding: 8px 16px;
     background-color: var(--bg__dialog--dishes);
     border-radius: 25px;
 
-}
-
-.dialog__title {
-    font-size: 34px;
 }
 
 .footer {
