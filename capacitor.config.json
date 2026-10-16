@@ -1,5 +1,5 @@
 {
   "appId": "de.janusnova.whateat",
   "appName": "What eat?",
-  "webDir": "www"
+  "webDir": "dist/what-eat/browser"
 }

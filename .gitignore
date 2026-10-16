@@ -2,8 +2,14 @@
 node_modules
 
 # build output
-dist
+/dist
 dist-ssr
+/out-tsc
+/tmp
+/bazel-out
+
+# angular
+/.angular/cache
 
 # env files
 .env
@@ -13,14 +19,39 @@ dist-ssr
 # logs
 *.log
 pnpm-debug.log*
+npm-debug.log
+yarn-error.log
+testem.log
 
 # editor
 .vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
 !.vscode/extensions.json
-.idea
+!.vscode/mcp.json
+.history/*
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# test output
+/coverage
+/typings
+__screenshots__/
 
 # os
 .DS_Store
+Thumbs.db
+
+# misc
+.sass-cache/
+/connect.lock
+/libpeerconnection.log
 
 # folder
 /docs
