@@ -1,0 +1,39 @@
+.button {
+  cursor: pointer;
+
+  &__dish {
+    width: 200px;
+    height: 64px;
+    font-size: 32px;
+    color: var(--text__button--dish);
+    background-color: var(--bg__button);
+    border: none;
+    border-radius: 25px;
+    transition:
+      background-color 0.2s ease-in-out,
+      box-shadow 0.2s ease-in-out;
+
+    &:hover {
+      background-color: var(--bg__button--hover);
+      box-shadow: var(--border__dialog);
+    }
+  }
+
+  &__dish--add {
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.icon {
+  &__dish--add {
+    height: 24px;
+  }
+
+  &__trash,
+  &__rename {
+    height: 24px;
+  }
+}

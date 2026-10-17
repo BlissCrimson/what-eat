@@ -1,28 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
-@use 'styles/typography';
-
+@use "styles/assets";
+@use "styles/colors";
+@use "styles/typography";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 16px;
-  font-family: 'Roboto', sans-serif;
 }
 
 a {
   color: var(--text-link);
   text-decoration: none;
-}
-
-a:hover {
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
 }
 
 .d_none {
@@ -32,60 +32,72 @@ body {
 .main {
   margin: 32px;
   flex: 1;
-}
+  &__imprint,
+  &__privacy {
+    h2 {
+      font-size: 32px;
+      text-align: center;
+    }
+  }
 
-.main__imprint,
-.main__privacy {
-  h2 {
-    font-size: 32px;
-    text-align: center;
+  &__dishes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__index {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
   }
 }
+.dialog {
+  &__dishes {
+    &[open] {
+      width: 300px;
+      height: 300px;
+      margin: auto;
+      padding-top: 48px;
+      border: 0.5px solid var(--border__dialog);
+      border-radius: 25px;
+      background-color: var(--bg__dialog--dishes);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
 
+    &--icon {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      height: 24px;
+      filter: invert(1);
+      transform: rotate(45deg);
+    }
 
+    &--input {
+      height: 48px;
+      padding-left: 8px;
+      border: 0.5px solid var(--shadow__button--hover);
+      border-radius: 25px;
+    }
+  }
 
+  &__title {
+    font-size: 34px;
+    text-align: center;
 
-.dialog__dishes[open] {
-  width: 300px;
-  height: 300px;
-  margin: auto;
-  padding-top: 48px;
-  border: 0.5px solid var(--border__dialog);
-  border-radius: 25px;
-  background-color: var(--bg__dialog--dishes);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
+    &--rename {
+      font-size: 24px;
+      text-align: center;
+    }
+  }
 }
-
-.dialog__dishes--icon {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  height: 24px;
-  filter: invert();
-  transform: rotate(45deg);
-}
-
-.dialog__dishes--input {
-  height: 48px;
-  padding-left: 8px;
-  border: 0.5px solid var(--shadow__button--hover);
-  border-radius: 25px;
-}
-
-.dialog__title {
-  font-size: 34px;
-  text-align: center;
-}
-
-.dialog__title--rename {
-  font-size: 24px;
-  text-align: center;
-}
-
-
 
 .dish__list {
   width: 100%;
@@ -95,13 +107,12 @@ body {
   align-items: center;
   margin: 4px;
   padding: 4px 16px;
-  border: 2px solid rgba(25, 46, 25, 0.24);
+  border: 2px solid var(--border__dish-list);
   border-radius: 25px;
-}
-
-.dish__list--icons {
-  display: flex;
-  gap: 8px;
+  &--icons {
+    display: flex;
+    gap: 8px;
+  }
 }
 
 .dishes__list {
@@ -109,27 +120,4 @@ body {
   padding: 8px 16px;
   background-color: var(--bg__dialog--dishes);
   border-radius: 25px;
-
-}
-
-
-
-
-
-
-
-
-.main__dishes {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-
-.main__index {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
 }
