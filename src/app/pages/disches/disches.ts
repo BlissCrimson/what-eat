@@ -5,7 +5,7 @@ import { Footer } from '../../shared/components/footer/footer';
 @Component({
   imports: [Header, Footer],
   selector: 'app-disches',
-  styleUrl: './disches.css',
+  styleUrl: './disches.scss',
   templateUrl: './disches.html',
 })
 export class Disches {}

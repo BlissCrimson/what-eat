@@ -5,7 +5,7 @@ import { Footer } from '../../shared/components/footer/footer';
 @Component({
   imports: [Header, Footer],
   selector: 'app-home',
-  styleUrl: './home.css',
+  styleUrl: './home.scss',
   templateUrl: './home.html',
 })
 export class Home {}

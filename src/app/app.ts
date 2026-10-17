@@ -6,7 +6,7 @@ import { Footer } from './shared/components/footer/footer';
 @Component({
   imports: [RouterOutlet, Header, Footer],
   selector: 'app-root',
-  styleUrl: './app.css',
+  styleUrl: './app.scss',
   templateUrl: './app.html',
 })
 export class App {

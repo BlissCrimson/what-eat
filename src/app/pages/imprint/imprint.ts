@@ -5,7 +5,7 @@ import { Footer } from '../../shared/components/footer/footer';
 @Component({
   imports: [Header, Footer],
   selector: 'app-imprint',
-  styleUrl: './imprint.css',
+  styleUrl: './imprint.scss',
   templateUrl: './imprint.html',
 })
 export class Imprint {}

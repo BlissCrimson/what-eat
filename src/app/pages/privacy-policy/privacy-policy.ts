@@ -5,7 +5,7 @@ import { Footer } from '../../shared/components/footer/footer';
 @Component({
   imports: [Header, Footer],
   selector: 'app-privacy-policy',
-  styleUrl: './privacy-policy.css',
+  styleUrl: './privacy-policy.scss',
   templateUrl: './privacy-policy.html',
 })
 export class PrivacyPolicy {}
