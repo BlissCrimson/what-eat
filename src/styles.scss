@@ -25,6 +25,16 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+app-root,
+app-home,
+app-disches,
+app-imprint,
+app-privacy-policy {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
 .d_none {
   display: none;
 }

@@ -1,24 +1,33 @@
 <app-header></app-header>
 <main class="main main__dishes">
-  <button class="button button__dish button__dish--add" id="openDialogBtn">Gericht
-    <img class="icon__dish--add" src="./asetts/icons/icon__plus.svg" alt="+">
+  <button class="button button__dish button__dish--add" (click)="openAdd()">Gericht
+    <img class="icon__dish--add" src="/asetts/icons/icon__plus.svg" alt="+">
   </button>
   <section class="dishes__list">
-    <ul id="meals">
+    <ul>
+      @for (dish of dishService.dishes(); track $index) {
+        <div class="dish__list">
+          {{ dish.name }}
+          <div class="dish__list--icons">
+            <img class="icon__rename" src="/asetts/icons/icon__rename.png" alt="rename" (click)="openRename($index)">
+            <img class="icon__trash" src="/asetts/icons/icon__trash.png" alt="trash" (click)="remove($index)">
+          </div>
+        </div>
+      }
     </ul>
   </section>
 
-  <dialog class="dialog__dishes" id="addDishDialog">
-    <img class="dialog__dishes--icon" id="closeDialogIcon" src="./asetts/icons/icon__plus.svg" alt="X">
+  <dialog class="dialog__dishes" #addDialog (click)="closeOnBackdrop($event, addDialog)">
+    <img class="dialog__dishes--icon" src="/asetts/icons/icon__plus.svg" alt="X" (click)="addDialog.close()">
     <label class="dialog__title" for="dishInput">Gericht</label>
-    <input class="dialog__dishes--input" type="text" id="dishInput" placeholder="   z.B. Tortelini">
-    <button class="button button__dish button__dish--add" id="addDishBtn">Hinzufügen</button>
+    <input class="dialog__dishes--input" type="text" id="dishInput" placeholder="   z.B. Tortelini" [(ngModel)]="newName" (keydown.enter)="add()">
+    <button class="button button__dish button__dish--add" (click)="add()">Hinzufügen</button>
   </dialog>
-  <dialog class="dialog__dishes" id="renameDishDialog">
-    <img class="dialog__dishes--icon" id="closeRenameDialogIcon" src="./asetts/icons/icon__plus.svg" alt="X">
+  <dialog class="dialog__dishes" #renameDialog (click)="closeOnBackdrop($event, renameDialog)">
+    <img class="dialog__dishes--icon" src="/asetts/icons/icon__plus.svg" alt="X" (click)="renameDialog.close()">
     <label class="dialog__title--rename" for="renameInput">Gericht Umbenennen</label>
-    <input class="dialog__dishes--input" type="text" id="renameInput" placeholder="   Neuer Name">
-    <button class="button button__dish button__dish--rename" id="renameDishBtn">Umbenennen</button>
+    <input class="dialog__dishes--input" type="text" id="renameInput" placeholder="   Neuer Name" [(ngModel)]="renameName" (keydown.enter)="confirmRename()">
+    <button class="button button__dish button__dish--rename" (click)="confirmRename()">Umbenennen</button>
   </dialog>
 </main>
 <app-footer></app-footer>
